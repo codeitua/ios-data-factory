@@ -337,4 +337,4 @@ Note that if you intend on replacing the component that generates words, you sho
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
