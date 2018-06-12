@@ -9,20 +9,25 @@
 import Foundation
 
 public class DefaultAddressDataValues {
-    
+
     // MARK: - Initializer
-    
+
     public init() {}
-    
+    public init(streetNames: [String] = [], addressSuffixes: [String] = [], cities: [String] = []) {
+        if !streetNames.isEmpty { self.streetNames = streetNames }
+        if !addressSuffixes.isEmpty { self.addressSuffixes = addressSuffixes }
+        if !cities.isEmpty { self.cities = cities }
+    }
+
     // MARK: - Public properties
     
     public let defaultStreetName = "Pillow"
     public let defaultAddressSuffix = "Corner"
     public let defaultCity = "Antwerpen"
-    
+
     // MARK: - Private properties
-    
-    fileprivate let streetNames = ["Aberdeen", "Abington", "Academy",
+
+    private var streetNames = ["Aberdeen", "Abington", "Academy",
     "Adair", "Adams", "Adamsville", "Aeryview", "Agines", "Airport",
     "Airwood", "Akron", "Alameda", "Albert", "Albright", "Alburn",
     "Alexis", "Alfred", "Alice", "Alkire", "Allen", "Allison", "Alvin",
@@ -254,14 +259,14 @@ public class DefaultAddressDataValues {
     "Wolfe", "Wolford", "Woodberry", "Woodbrook", "Woodland",
     "Woodlawn", "Woolper", "Workman", "Wortman", "Wrexham", "Yale",
     "Yingling", "Yost", "Young", "Zane", "Zanesville", "Zella"]
-    
-    fileprivate let addressSuffixes = ["Avenue", "Boulevard",
+
+    private var addressSuffixes = ["Avenue", "Boulevard",
     "Circle", "Crescent", "Court", "Drive", "Heights", "Lane", "Park",
     "Path", "Parkway", "Place", "Road", "Ridge", "Run", "Square",
     "Street", "Station", "Terrace", "Trail", "Way", "Rd", "Ln", "St",
     "Blvd", "Ave", "Drv"]
-    
-    fileprivate let cities = ["Abba", "Abbeville", "Acworth",
+
+    private var cities = ["Abba", "Abbeville", "Acworth",
     "Adairsville", "Adel", "Adrian", "Ailey", "Alamo", "Alapaha",
     "Albany", "Allenhurst", "Alma", "Alma", "Alpharetta", "Alston",
     "Amboy", "Ambrose", "Americus", "Appling", "Arlington", "Ashburn",
@@ -357,17 +362,17 @@ public class DefaultAddressDataValues {
     "Whitmarsh Island", "Willacoochee", "Wilmington Island", "Winder",
     "Winokur", "Withers", "Woodbine", "Woodstock", "Worth", "Wray",
     "Wrightsville"]
-    
+
     // MARK: - Public API
-    
+
     public func getCities() -> [String] {
         return cities
     }
-    
+
     public func getStreetNames() -> [String] {
         return streetNames
     }
-    
+
     public func getAddressSuffixes() -> [String] {
         return addressSuffixes
     }

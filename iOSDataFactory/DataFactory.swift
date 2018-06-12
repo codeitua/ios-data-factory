@@ -8,15 +8,15 @@
 
 import Foundation
 
-fileprivate let kRangeOfRandom: Int = 93285
+private let kRangeOfRandom: Int = 93285
 
 public final class DataFactory {
 
     // MARK: - Private properties
     
-    fileprivate lazy var nameDataValues = DefaultNameDataValues()
-    fileprivate lazy var addressDataValues = DefaultAddressDataValues()
-    fileprivate lazy var contentDataValues = DefaultContentDataValues()
+    private lazy var nameDataValues = DefaultNameDataValues()
+    private lazy var addressDataValues = DefaultAddressDataValues()
+    private lazy var contentDataValues = DefaultContentDataValues()
     
     // MARK: - Initializer
     
@@ -182,14 +182,13 @@ public final class DataFactory {
         var length = minLength + self.getRandom(from: maxLength - minLength)
 
         while length > 0 {
-            if randomText.count < length { randomText.append(" "); length -= 1 }
-            
             let desiredWordLengthNormalDistributed = self.getNumber(between: 1, and: 10)
             let usedWordLength = min(desiredWordLengthNormalDistributed, length)
             
             if let word = getRandomWord(length: usedWordLength) {
                 randomText.append(word)
                 length -= word.count
+                if length >= 1 { randomText.append(" "); length -= 1 }
             }
         }
         
@@ -267,12 +266,11 @@ public final class DataFactory {
     
     // MARK: - Private API
     
-    fileprivate func chance(_ chance: Int) -> Bool {
+    private func chance(_ chance: Int) -> Bool {
         return arc4random_uniform(100) < chance
     }
     
-    fileprivate func getRandom(from number: Int = kRangeOfRandom) -> Int {
-        //if number > UINT32_MAX { return Int(arc4random_uniform(UINT32_MAX)) }
+    private func getRandom(from number: Int = kRangeOfRandom) -> Int {
         if number >> 32 == 0 { return Int(arc4random_uniform(UInt32(number))) }
         return Int(arc4random_uniform(UInt32(number >> 32))) << 32
     }

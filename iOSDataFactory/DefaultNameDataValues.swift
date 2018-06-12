@@ -9,21 +9,27 @@
 import Foundation
 
 public class DefaultNameDataValues {
-    
+
     // MARK: - Initializer
-    
+
     public init() {}
-    
+    public init(suffixes: [String] = [], prefixes: [String] = [], firstNames: [String] = [], lastNames: [String] = []) {
+        if !suffixes.isEmpty { self.suffixes = suffixes }
+        if !prefixes.isEmpty { self.prefixes = prefixes }
+        if !firstNames.isEmpty { self.firstNames = firstNames }
+        if !lastNames.isEmpty { self.lastNames = lastNames }
+    }
+
     // MARK: - Public properties
-    
+
     public let defaultFirstName = "Annabelle"
     public let defaultLastName = "Blanc"
-    
+
     // MARK: - Private properties
-    
-    fileprivate let suffixes = ["II", "III", "Phd", "Jr", "Sr"]
-    fileprivate let prefixes = ["Mr", "Mrs", "Ms"]
-    fileprivate let firstNames = ["Aaron", "Abby", "Abigail", "Adam",
+
+    private var suffixes = ["II", "III", "Phd", "Jr", "Sr"]
+    private var prefixes = ["Mr", "Mrs", "Ms"]
+    private var firstNames = ["Aaron", "Abby", "Abigail", "Adam",
         "Alan", "Albert", "Alex", "Alexandra", "Alexis", "Alice", "Alicia",
         "Alisha", "Alissa", "Allen", "Allison", "Alyssa", "Amanda",
         "Amber", "Amy", "Andrea", "Andrew", "Andy", "Angel", "Angela",
@@ -105,8 +111,8 @@ public class DefaultNameDataValues {
         "Victor", "Victoria", "Vincent", "Virginia", "Vivian", "Walter",
         "Wanda", "Wayne", "Wendy", "Wesley", "Whitney", "William",
         "Willie", "Wyatt", "Zachary"]
-    
-    fileprivate let lastNames = ["Abbott", "Acevedo", "Acosta",
+
+    private var lastNames = ["Abbott", "Acevedo", "Acosta",
         "Adams", "Adkins", "Aguilar", "Aguirre", "Albert", "Alexander",
         "Alford", "Allen", "Allison", "Alston", "Alvarado", "Alvarez",
         "Anderson", "Andrews", "Anthony", "Armstrong", "Arnold", "Ashley",
@@ -267,21 +273,21 @@ public class DefaultNameDataValues {
         "Woodard", "Woods", "Woodward", "Wooten", "Workman", "Wright",
         "Wyatt", "Wynn", "Yang", "Yates", "York", "Young", "Zamora",
         "Zimmerman"]
-    
+
     // MARK: - Public API
-    
+
     public func getFirstNames() -> [String] {
         return firstNames
     }
-    
+
     public func getLastNames() -> [String] {
         return lastNames
     }
-    
+
     public func getPrefixes() -> [String] {
         return prefixes
     }
-    
+
     public func getSuffixes() -> [String] {
         return suffixes
     }

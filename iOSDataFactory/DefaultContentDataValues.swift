@@ -13,6 +13,12 @@ public class DefaultContentDataValues {
     // MARK: - Initializer
     
     public init() {}
+    public init(words: [String] = [], businessTypes: [String] = [], emailHosts: [String] = [], tlds: [String] = []) {
+        if !words.isEmpty { self.words = words }
+        if !businessTypes.isEmpty { self.businessTypes = businessTypes }
+        if !emailHosts.isEmpty { self.emailHosts = emailHosts }
+        if !tlds.isEmpty { self.tlds = tlds }
+    }
     
     // MARK: - Public properties
     
@@ -23,7 +29,7 @@ public class DefaultContentDataValues {
     
     // MARK: - Private properties
     
-    fileprivate let words = ["throw", "ball", "hat", "red", "worn",
+    private var words = ["throw", "ball", "hat", "red", "worn",
     "list", "words", "computer", "in", "out", "hot", "cold", "warp",
     "speed", "captain", "assert", "hold", "room", "ship", "lost", "is",
     "television", "show", "about", "plane", "crash", "island",
@@ -47,17 +53,17 @@ public class DefaultContentDataValues {
     "handled", "books", "constantly", "headphones", "of", "ill", "on",
     "it's", "sill", "sits", "sofa"]
     
-    fileprivate let businessTypes = ["Furnishings", "Bakery",
+    private var businessTypes = ["Furnishings", "Bakery",
     "Accounting", "Textiles", "Manufacturing", "Industries",
     "Pro Services", "Landscaping", "Realty", "Travel",
     "Medical supplies", "Office supplies", "Insurance", "Software",
     "Motors", "Cafe", "Services", "Gymnasium", "Motor Services",
     "Signs", "Development", "Studios", "Engineering", "Development"]
     
-    fileprivate let emailHosts = ["gma1l", "hotma1l", "yah00",
+    private var emailHosts = ["gma1l", "hotma1l", "yah00",
     "somema1l", "everyma1l", "ma1lbox", "b1zmail", "ma1l2u"]
     
-    fileprivate let tlds = ["org", "net", "com", "biz", "us", "co.uk"]
+    private var tlds = ["org", "net", "com", "biz", "us", "co.uk"]
     
     // MARK: - Public API
     
