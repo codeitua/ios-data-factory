@@ -1,0 +1,5 @@
+xcuserdata
+xcuserdata/*
+.idea
+.DS_Store
+pass.txt

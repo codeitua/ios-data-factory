@@ -9,9 +9,9 @@
 import Foundation
 
 public class DefaultContentDataValues {
-    
+
     // MARK: - Initializer
-    
+
     public init() {}
     public init(words: [String] = [], businessTypes: [String] = [], emailHosts: [String] = [], tlds: [String] = []) {
         if !words.isEmpty { self.words = words }
@@ -19,16 +19,16 @@ public class DefaultContentDataValues {
         if !emailHosts.isEmpty { self.emailHosts = emailHosts }
         if !tlds.isEmpty { self.tlds = tlds }
     }
-    
+
     // MARK: - Public properties
-    
+
     public let defaultWord = "leaf"
     public let defaultBusinessType = "Supermarket"
     public let defaultEmailHost = "anyma1l"
     public let defaultTld = "gov"
-    
+
     // MARK: - Private properties
-    
+
     private var words = ["throw", "ball", "hat", "red", "worn",
     "list", "words", "computer", "in", "out", "hot", "cold", "warp",
     "speed", "captain", "assert", "hold", "room", "ship", "lost", "is",
@@ -52,33 +52,33 @@ public class DefaultContentDataValues {
     "so", "will", "from", "the", "web", "ending", "badly", "library",
     "handled", "books", "constantly", "headphones", "of", "ill", "on",
     "it's", "sill", "sits", "sofa"]
-    
+
     private var businessTypes = ["Furnishings", "Bakery",
     "Accounting", "Textiles", "Manufacturing", "Industries",
     "Pro Services", "Landscaping", "Realty", "Travel",
     "Medical supplies", "Office supplies", "Insurance", "Software",
     "Motors", "Cafe", "Services", "Gymnasium", "Motor Services",
     "Signs", "Development", "Studios", "Engineering", "Development"]
-    
+
     private var emailHosts = ["gma1l", "hotma1l", "yah00",
     "somema1l", "everyma1l", "ma1lbox", "b1zmail", "ma1l2u"]
     
     private var tlds = ["org", "net", "com", "biz", "us", "co.uk"]
-    
+
     // MARK: - Public API
-    
+
     public func getWords() -> [String] {
         return words
     }
-    
+
     public func getBusinessTypes() -> [String] {
         return businessTypes
     }
-    
+
     public func getEmailHosts() -> [String] {
         return emailHosts
     }
-    
+
     public func getTlds() -> [String] {
         return tlds
     }

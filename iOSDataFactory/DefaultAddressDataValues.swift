@@ -20,7 +20,7 @@ public class DefaultAddressDataValues {
     }
 
     // MARK: - Public properties
-    
+
     public let defaultStreetName = "Pillow"
     public let defaultAddressSuffix = "Corner"
     public let defaultCity = "Antwerpen"
