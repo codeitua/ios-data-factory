@@ -21,7 +21,7 @@ iOSDataFactory detailed description
   s.platform = :ios
   s.ios.deployment_target = "10.0"
 
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
   
   s.source       = { :git => "https://github.com/codeitua/ios-data-factory.git", :tag => "#{s.version}" }
 
