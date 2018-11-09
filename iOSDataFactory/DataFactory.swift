@@ -267,11 +267,10 @@ public final class DataFactory {
     // MARK: - Private API
 
     private func chance(_ chance: Int) -> Bool {
-        return arc4random_uniform(100) < chance
+        return getRandom(from: 100) < chance
     }
 
     private func getRandom(from number: Int = kRangeOfRandom) -> Int {
-        if number >> 32 == 0 { return Int(arc4random_uniform(UInt32(number))) }
-        return Int(arc4random_uniform(UInt32(number >> 32))) << 32
+        return number == 0 ? 0 : Int.random(in: Range(uncheckedBounds: (lower: 0, upper: number)))
     }
 }
